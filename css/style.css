@@ -3,17 +3,24 @@ body{
     padding: 0;
 }
 
-.box1{
-    height: 400px;
-    
+.bg-section{
+    height: 500px;
+    background-image: url("../img/1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-section h1{
+    padding-top: 100px;
+    color: #670D2F;
 }
 
-.box2{
-    height: 400px;
-    
+.btn-outline-dark{
+    border-radius: 0px!Important;
+    padding: 10px 50px!Important;
+    color: blue;
 }
 
-.box3{
-    height: 400px;
-    
+.bg-section{
+    padding-left: 180px;
+    padding-right: 180px;
 }
