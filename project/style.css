@@ -8,16 +8,20 @@ body {
 .cart-container {
   max-width: 800px;
   margin: auto;
-  background: #fff;
+  background: #9dbee0;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(103, 13, 13, 0.1);  
+}
+
+.text-center{
+border-bottom: 1px solid #140606;
 }
 
 .cart-item {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #140606;
   padding: 15px 0;
 }
 

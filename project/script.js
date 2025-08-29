@@ -1,36 +1,30 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
+
   function updateCartTotal() {
-    let cartItems = document.querySelectorAll(".cart-item");
     let total = 0;
+    document.querySelectorAll(".cart-item").forEach(item => {
+      let price = +item.dataset.price;                  // base price
+      let qty = +item.querySelector(".quantity").value; // selected qty
+      let itemTotal = price * qty;
 
-    cartItems.forEach(item => {
-      let basePrice = parseInt(item.getAttribute("data-price")); 
-      let quantity = parseInt(item.querySelector(".quantity").value);
-      let itemTotal = basePrice * quantity;
-
-      
       item.querySelector(".item-total").textContent = itemTotal;
-
-      
       total += itemTotal;
     });
-
     document.getElementById("cart-total").textContent = total;
   }
 
-  
-  document.querySelectorAll(".quantity").forEach(select => {
-    select.addEventListener("change", updateCartTotal);
+  // Quantity change event
+  document.querySelectorAll(".quantity").forEach(qtyBox => {
+    qtyBox.onchange = updateCartTotal;
   });
 
-  
+  // Remove button event
   document.querySelectorAll(".remove-btn").forEach(btn => {
-    btn.addEventListener("click", function() {
-      this.closest(".cart-item").remove();
+    btn.onclick = () => {
+      btn.closest(".cart-item").remove();
       updateCartTotal();
-    });
+    };
   });
 
-  
-  updateCartTotal();
+  updateCartTotal(); // run once at start
 });
